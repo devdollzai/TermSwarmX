@@ -1,0 +1,42 @@
+# AI Swarm IDE - Base Requirements
+# Core dependencies for the multi-agent AI development environment
+
+# Core Framework
+textual>=0.40.0
+prompt_toolkit>=3.0.0
+pygments>=2.10.0
+
+# AI Integration
+ollama>=0.1.0
+openai>=1.0.0
+anthropic>=0.7.0
+
+# UI and CLI Enhancement
+rich>=13.0.0
+typer[all]>=0.9.0
+colorama>=0.4.6
+
+# Data and Configuration
+pydantic>=2.0.0
+python-dotenv>=1.0.0
+
+# Networking and Communication
+requests>=2.31.0
+websockets>=11.0.0
+aiohttp>=3.8.0
+
+# Standard Library (Python 3.9+)
+# These are built-in but listed for documentation
+# asyncio
+# multiprocessing
+# pathlib
+# typing
+# dataclasses
+# enum
+# json
+# datetime
+# time
+# queue
+# os
+# sys
+# sqlite3

@@ -1,0 +1,37 @@
+# DevDollz: Atelier Edition - Professional AI Development Terminal
+# Built for power users who demand excellence in their development environment
+# 
+# Python dependencies for the DevDollz: Atelier Edition IDE
+# Author: Alexis Adams
+# Brand: DevDollz: Atelier Edition
+
+# Core TUI Framework
+textual>=0.40.0
+
+# AI Integration
+ollama
+
+# Voice Recognition
+SpeechRecognition
+PyAudio
+
+# Enhanced CLI (fallback)
+prompt_toolkit
+pygments
+
+# Static Code Analysis
+pylint
+
+# Database
+sqlite3
+
+# Standard Library (included with Python)
+# multiprocessing
+# json
+# os
+# time
+# datetime
+# importlib.util
+# concurrent.futures
+# asyncio
+# io.StringIO

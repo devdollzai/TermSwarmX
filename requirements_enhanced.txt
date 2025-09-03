@@ -1,0 +1,59 @@
+# Enhanced AI Swarm IDE Requirements
+# Core dependencies for the enhanced multiprocessing system
+
+# Rich console output and formatting
+rich>=13.0.0
+
+# Textual TUI framework
+textual>=0.40.0
+
+# Database and data handling
+sqlite3  # Built into Python 3.x
+
+# Multiprocessing and threading (built into Python)
+# multiprocessing
+# threading
+# queue
+# asyncio
+
+# Standard library dependencies (built into Python)
+# json
+# logging
+# datetime
+# pathlib
+# typing
+# dataclasses
+# enum
+# uuid
+# time
+# sys
+# os
+
+# Optional: For actual LLM integration (uncomment and install as needed)
+# ollama>=0.1.0  # For local LLM integration
+# openai>=1.0.0  # For OpenAI API integration
+# anthropic>=0.7.0  # For Claude API integration
+
+# Optional: For enhanced file operations
+# watchdog>=3.0.0  # For file system monitoring
+# pathlib2>=2.3.7  # Enhanced path operations (Python < 3.4)
+
+# Optional: For voice integration (future feature)
+# speech_recognition>=3.10.0
+# pyttsx3>=2.90
+
+# Optional: For web interface (future feature)
+# fastapi>=0.100.0
+# uvicorn>=0.23.0
+# websockets>=11.0.0
+
+# Development and testing dependencies
+pytest>=7.0.0
+pytest-asyncio>=0.21.0
+black>=23.0.0
+flake8>=6.0.0
+mypy>=1.0.0
+
+# Documentation
+sphinx>=7.0.0
+sphinx-rtd-theme>=1.3.0

@@ -1,0 +1,24 @@
+# DevDollz: Atelier Edition - Core Dependencies
+# Core Framework
+textual>=0.40.0
+prompt_toolkit>=3.0.0
+pygments>=2.10.0
+
+# AI Integration
+ollama>=0.1.0
+
+# Code Quality
+pylint>=2.17.0
+
+# Voice Integration
+SpeechRecognition>=3.10.0
+PyAudio>=0.2.11
+
+# Data Processing
+numpy>=1.21.0
+
+# Development Tools
+pytest>=7.0.0
+pytest-asyncio>=0.21.0
+black>=23.0.0
+flake8>=6.0.0

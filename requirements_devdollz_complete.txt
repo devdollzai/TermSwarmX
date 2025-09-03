@@ -1,0 +1,24 @@
+# DevDollz Complete System Requirements
+# The Current That Flows - Zero External Dependencies
+
+# Core dependencies
+ollama>=0.1.0
+
+# System monitoring
+psutil>=5.9.0
+
+# Voice recognition (optional)
+SpeechRecognition>=3.10.0
+PyAudio>=0.2.11
+
+# GUI (optional - falls back to console)
+# tkinter is usually included with Python
+
+# Development and testing
+pytest>=7.0.0
+black>=23.0.0
+
+# Platform-specific (optional)
+# Windows: winreg (built-in)
+# macOS: launchd (built-in)  
+# Linux: systemd (built-in)

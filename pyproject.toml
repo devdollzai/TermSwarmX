@@ -1,0 +1,303 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "devdollz-ai-swarm-ide"
+version = "0.1.0"
+description = "DevDollz AI Swarm IDE - Where Code Meets Chaos. Built by Alexis Adams for the Hacker Elite"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Alexis Adams", email = "alexis@devdollz.dev"}
+]
+maintainers = [
+    {name = "Alexis Adams", email = "alexis@devdollz.dev"},
+    {name = "DevDollz Community", email = "community@devdollz.dev"}
+]
+keywords = [
+    "devdollz", "ai", "development", "ide", "terminal", "multi-agent", "swarm", "code-generation", 
+    "debugging", "collaboration", "productivity", "automation", "cli", "tui", "hacker", "pink", "girly"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: User Interfaces",
+    "Topic :: Software Development :: Code Generators",
+    "Topic :: Software Development :: Debuggers",
+    "Topic :: Software Development :: Libraries :: Application Frameworks",
+    "Topic :: System :: Systems Administration",
+    "Topic :: Terminals",
+    "Topic :: Text Processing",
+    "Topic :: Utilities",
+    "Topic :: Security",
+    "Topic :: System :: Networking :: Monitoring",
+]
+requires-python = ">=3.9"
+dependencies = [
+    "textual>=0.40.0",
+    "prompt_toolkit>=3.0.0",
+    "pygments>=2.10.0",
+    "ollama>=0.1.0",
+    "openai>=1.0.0",
+    "anthropic>=0.7.0",
+    "rich>=13.0.0",
+    "typer[all]>=0.9.0",
+    "pydantic>=2.0.0",
+    "python-dotenv>=1.0.0",
+    "requests>=2.31.0",
+    "websockets>=11.0.0",
+    "colorama>=0.4.6",
+    "numpy>=1.21.0",
+    "pylint>=2.17.0",
+    "SpeechRecognition>=3.10.0",
+    "PyAudio>=0.2.11"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "pytest-asyncio>=0.21.0",
+    "black>=23.0.0",
+    "flake8>=6.0.0",
+    "isort>=5.12.0",
+    "mypy>=1.3.0",
+    "pre-commit>=3.0.0",
+    "tox>=4.0.0",
+    "coverage>=7.0.0",
+    "bandit>=1.7.0",
+    "safety>=2.0.0"
+]
+production = [
+    "psycopg2-binary>=2.9.0",
+    "redis>=4.5.0",
+    "celery>=5.3.0",
+    "gunicorn>=21.0.0",
+    "uvicorn>=0.20.0",
+    "fastapi>=0.100.0",
+    "streamlit>=1.25.0"
+]
+optional = [
+    "speech_recognition>=3.10.0",
+    "pyttsx3>=2.90",
+    "pyaudio>=0.2.11",
+    "opencv-python>=4.8.0",
+    "pillow>=10.0.0",
+    "matplotlib>=3.7.0",
+    "seaborn>=0.12.0",
+    "pandas>=2.0.0",
+    "numpy>=1.24.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/devdollzai/ai-swarm-ide"
+Documentation = "https://devdollz-ai-swarm-ide.readthedocs.io"
+Repository = "https://github.com/devdollzai/ai-swarm-ide.git"
+"Bug Tracker" = "https://github.com/devdollzai/ai-swarm-ide/issues"
+Discord = "https://discord.gg/devdollz"
+Twitter = "https://twitter.com/DevDollzAI"
+Blog = "https://blog.devdollz.dev"
+
+[project.scripts]
+devdollz = "src.main:main"
+swarm-ide = "src.main:main"
+swarm = "src.main:main"
+
+[project.gui-scripts]
+devdollz-gui = "src.ui.tui:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["*"]
+exclude = ["tests*", "docs*", "examples*"]
+
+[tool.setuptools.package-data]
+"*" = ["*.txt", "*.md", "*.yml", "*.yaml", "*.json", "*.toml"]
+
+[tool.black]
+line-length = 88
+target-version = ['py39', 'py310', 'py311', 'py312']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 88
+known_first_party = ["src"]
+known_third_party = ["textual", "prompt_toolkit", "pygments", "ollama", "openai", "anthropic"]
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+strict_equality = true
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q --strict-markers --strict-config"
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "integration: marks tests as integration tests",
+    "performance: marks tests as performance tests",
+    "unit: marks tests as unit tests"
+]
+
+[tool.coverage.run]
+source = ["src"]
+omit = [
+    "*/tests/*",
+    "*/test_*",
+    "*/__pycache__/*",
+    "*/venv/*",
+    "*/env/*",
+    "*/.venv/*"
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if self.debug:",
+    "if settings.DEBUG",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if 0:",
+    "if __name__ == .__main__.:",
+    "class .*\\bProtocol\\):",
+    "@(abc\\.)?abstractmethod",
+]
+
+[tool.bandit]
+exclude_dirs = ["tests", "docs", "examples"]
+skips = ["B101", "B601"]
+
+[tool.safety]
+output = "json"
+save = "safety-report.json"
+
+[tool.pre-commit]
+repos = [
+    {
+        repo = "https://github.com/pre-commit/pre-commit-hooks",
+        rev = "v4.4.0",
+        hooks = [
+            "trailing-whitespace",
+            "end-of-file-fixer",
+            "check-yaml",
+            "check-added-large-files",
+            "check-merge-conflict",
+            "check-case-conflict",
+            "check-docstring-first",
+            "check-json",
+            "check-merge-conflict",
+            "check-symlinks",
+            "check-toml",
+            "debug-statements",
+            "detect-private-key",
+            "end-of-file-fixer",
+            "fix-byte-order-marker",
+            "mixed-line-ending",
+            "name-tests-test",
+            "no-commit-to-branch",
+            "pretty-format-json",
+            "requirements-txt-fixer",
+            "trailing-whitespace",
+        ]
+    },
+    {
+        repo = "https://github.com/psf/black",
+        rev = "23.3.0",
+        hooks = ["black"]
+    },
+    {
+        repo = "https://github.com/pycqa/isort",
+        rev = "5.12.0",
+        hooks = ["isort"]
+    },
+    {
+        repo = "https://github.com/pycqa/flake8",
+        rev = "6.0.0",
+        hooks = ["flake8"]
+    },
+    {
+        repo = "https://github.com/pre-commit/mirrors-mypy",
+        rev = "v1.3.0",
+        hooks = ["mypy"]
+    },
+    {
+        repo = "https://github.com/PyCQA/bandit",
+        rev = "1.7.5",
+        hooks = ["bandit"]
+    }
+]
+
+[tool.tox]
+legacy_tox_ini = """
+[tox]
+envlist = py39, py310, py311, py312, lint, security
+isolated_build = True
+
+[testenv]
+deps =
+    pytest>=7.0.0
+    pytest-cov>=4.0.0
+    pytest-asyncio>=0.21.0
+commands =
+    pytest {posargs:tests} --cov=src --cov-report=term-missing --cov-report=html
+
+[testenv:lint]
+deps =
+    black>=23.0.0
+    flake8>=6.0.0
+    isort>=5.12.0
+    mypy>=1.3.0
+commands =
+    black --check src tests
+    flake8 src tests
+    isort --check-only src tests
+    mypy src
+
+[testenv:security]
+deps =
+    bandit>=1.7.5
+    safety>=2.0.0
+commands =
+    bandit -r src
+    safety check
+"""

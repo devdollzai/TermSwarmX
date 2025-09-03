@@ -1,0 +1,41 @@
+{
+    "include": [
+        ".",
+        "devdollz"
+    ],
+    "exclude": [
+        "**/node_modules",
+        "**/__pycache__",
+        ".venv",
+        "venv",
+        "env"
+    ],
+    "ignore": [],
+    "defineConstant": {},
+    "typeCheckingMode": "basic",
+    "useLibraryCodeForTypes": true,
+    "reportMissingImports": "none",
+    "reportMissingTypeStubs": false,
+    "reportUnusedImport": "none",
+    "reportUnusedClass": "none",
+    "reportUnusedFunction": "none",
+    "reportUnusedVariable": "none",
+    "pythonVersion": "3.13",
+    "pythonPlatform": "Windows",
+    "pythonPath": "python",
+    "venvPath": ".",
+    "venv": ".",
+    "executionEnvironments": [
+        {
+            "root": ".",
+            "pythonVersion": "3.13",
+            "pythonPlatform": "Windows",
+            "extraPaths": [
+                "./devdollz",
+                "./__pycache__",
+                "C:/Users/God-East-God/AppData/Roaming/Python/Python313/site-packages",
+                "C:/Python313/Lib/site-packages"
+            ]
+        }
+    ]
+}
