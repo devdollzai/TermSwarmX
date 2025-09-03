@@ -147,6 +147,17 @@ whisper_memory.db
 devdollz_atelier_memory.db
 spine_memory.db
 
+# Configuration files with secrets (keep templates, ignore actual configs)
+config.py
+devdollz/constants.py
+.env.local
+.env.production
+.env.staging
+
+# Keep template files
+!config_template.py
+!devdollz/constants_template.py
+
 # Temporary files
 temp_*
 *.tmp
