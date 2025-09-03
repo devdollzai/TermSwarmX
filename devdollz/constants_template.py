@@ -1,160 +1,237 @@
-# DevDollz: Atelier Edition - Constants Template
-# 
-# IMPORTANT: Copy this file to constants.py and add your actual secrets
-# NEVER commit constants.py with real secrets to version control
-#
-# Usage:
-# 1. Copy this file: cp constants_template.py constants.py
-# 2. Edit constants.py with your actual values
-# 3. Keep constants.py in your .gitignore (already done)
+#!/usr/bin/env python3
+"""
+DevDollz: Atelier Edition - Future-Proof High-Design Constants Template
+🎨 A sophisticated, modular design system for the next generation of AI development
+"""
 
 import os
+from typing import Dict, List, Any
 
-# Theme and Icons
-THEME_ICONS = {
-    "success": "✅",
-    "error": "❌",
-    "warning": "⚠️",
-    "info": "ℹ️",
-    "loading": "⏳",
-    "complete": "🎉",
-    "lock": "🔒",
-    "unlock": "🔓",
-    "key": "🔑",
-    "brain": "🧠",
-    "robot": "🤖",
-    "swarm": "🐝",
-    "atelier": "🎨",
-    "code": "💻",
-    "voice": "🎤",
-    "database": "🗄️",
-    "plugin": "🔌",
-    "security": "🛡️",
+# 🌟 FUTURISTIC BRANDING & IDENTITY
+DEVDOLLZ_IDENTITY = {
+    "name": "DevDollz: Atelier Edition",
+    "version": "2.0.0",
+    "codename": "Neon Genesis",
+    "tagline": "Where Code Meets Couture in the Digital Age",
+    "motto": "Elegance in Execution, Innovation in Imagination",
+    "era": "Post-Quantum Computing Era",
+    "aesthetic": "Cyber-Futurist Minimalism"
 }
 
-# Color Themes
-COLOR_THEMES = {
-    "dark": {
-        "bg": "#1a1a1a",
-        "fg": "#ffffff",
-        "accent": "#00ff88",
-        "error": "#ff4444",
-        "warning": "#ffaa00",
-        "success": "#00ff88",
-        "info": "#0088ff",
+# 🎭 ADVANCED VISUAL ICONOGRAPHY
+FUTURE_ICONS = {
+    # Core System States
+    "system_online": "⚡",
+    "system_offline": "💤",
+    "system_loading": "🌀",
+    "system_ready": "✨",
+    "system_error": "💥",
+    "system_warning": "⚠️",
+    
+    # AI & Intelligence
+    "ai_active": "🧠",
+    "ai_learning": "📚",
+    "ai_thinking": "💭",
+    "ai_creative": "🎨",
+    "ai_analytical": "🔬",
+    "ai_intuitive": "🔮",
+    
+    # Development & Code
+    "code_compile": "⚙️",
+    "code_deploy": "🚀",
+    "code_debug": "🐛",
+    "code_test": "🧪",
+    "code_review": "👁️",
+    "code_merge": "🔀",
+    
+    # Security & Access
+    "security_verified": "🛡️",
+    "security_breach": "🚨",
+    "access_granted": "🔓",
+    "access_denied": "🔒",
+    "authentication": "🔐",
+    "encryption": "🔒",
+    
+    # Creative & Design
+    "design_create": "🎨",
+    "design_edit": "✏️",
+    "design_preview": "👁️",
+    "design_export": "📤",
+    "design_import": "📥",
+    "design_share": "📤",
+    
+    # Communication & Network
+    "network_connected": "🌐",
+    "network_disconnected": "❌",
+    "data_transfer": "📡",
+    "voice_active": "🎤",
+    "voice_muted": "🔇",
+    "chat_active": "💬"
+}
+
+# 🌈 NEON-FUTURISTIC COLOR PALETTES
+NEON_COLOR_SYSTEMS = {
+    "cyber_neon": {
+        "primary": "#00ffff",      # Electric Cyan
+        "secondary": "#ff00ff",    # Magenta Pulse
+        "accent": "#ffff00",       # Neon Yellow
+        "background": "#0a0a0a",   # Deep Void
+        "surface": "#1a1a1a",      # Dark Matter
+        "text": "#ffffff",         # Pure White
+        "text_muted": "#888888",   # Steel Grey
+        "success": "#00ff88",      # Emerald Glow
+        "warning": "#ff8800",      # Amber Alert
+        "error": "#ff0088",        # Crimson Flash
+        "info": "#0088ff",         # Azure Sky
+        "highlight": "#ff88ff"     # Pink Haze
     },
-    "light": {
-        "bg": "#ffffff",
-        "fg": "#000000",
-        "accent": "#0088ff",
-        "error": "#cc0000",
-        "warning": "#cc6600",
-        "success": "#008800",
-        "info": "#0066cc",
+    
+    "quantum_dark": {
+        "primary": "#8b5cf6",      # Quantum Purple
+        "secondary": "#06b6d4",    # Deep Ocean
+        "accent": "#f59e0b",       # Golden Hour
+        "background": "#020617",   # Absolute Dark
+        "surface": "#0f172a",      # Midnight Blue
+        "text": "#f8fafc",         # Arctic White
+        "text_muted": "#64748b",   # Slate Grey
+        "success": "#10b981",      # Emerald
+        "warning": "#f59e0b",      # Amber
+        "error": "#ef4444",        # Red
+        "info": "#3b82f6",         # Blue
+        "highlight": "#ec4899"     # Pink
     },
-    "cyberpunk": {
-        "bg": "#0a0a0a",
-        "fg": "#00ff88",
-        "accent": "#ff0088",
-        "error": "#ff4444",
-        "warning": "#ffaa00",
-        "success": "#00ff88",
-        "info": "#0088ff",
+    
+    "holographic": {
+        "primary": "#a855f7",      # Holographic Purple
+        "secondary": "#06b6d4",    # Holographic Blue
+        "accent": "#f59e0b",       # Holographic Gold
+        "background": "#000000",   # Pure Black
+        "surface": "#111111",      # Near Black
+        "text": "#ffffff",         # Pure White
+        "text_muted": "#666666",   # Dark Grey
+        "success": "#10b981",      # Green
+        "warning": "#f59e0b",      # Orange
+        "error": "#ef4444",        # Red
+        "info": "#3b82f6",         # Blue
+        "highlight": "#ec4899"     # Pink
     }
 }
 
-# Application Messages
-MESSAGES = {
-    "welcome": "Welcome to DevDollz: Atelier Edition! 🎨",
-    "loading": "Loading DevDollz...",
-    "ready": "DevDollz is ready! 🚀",
-    "error": "An error occurred",
-    "success": "Operation completed successfully",
-    "invalid_command": "Invalid command. Type 'help' for available commands.",
-    "access_denied": "Access denied. Please authenticate.",
-    "not_found": "Command or file not found.",
-    "timeout": "Operation timed out.",
-    "connection_error": "Connection error. Please check your network.",
+# 🎨 ADVANCED TYPOGRAPHY SYSTEM
+TYPOGRAPHY_SYSTEM = {
+    "fonts": {
+        "primary": "JetBrains Mono",
+        "secondary": "Fira Code",
+        "display": "Orbitron",
+        "body": "Inter",
+        "monospace": "Cascadia Code"
+    },
+    
+    "weights": {
+        "light": 300,
+        "regular": 400,
+        "medium": 500,
+        "semibold": 600,
+        "bold": 700,
+        "extrabold": 800
+    },
+    
+    "sizes": {
+        "xs": "0.75rem",
+        "sm": "0.875rem",
+        "base": "1rem",
+        "lg": "1.125rem",
+        "xl": "1.25rem",
+        "2xl": "1.5rem",
+        "3xl": "1.875rem",
+        "4xl": "2.25rem",
+        "5xl": "3rem"
+    }
 }
 
-# Security Messages
-SECURITY_MESSAGES = {
-    "auth_required": "Authentication required to proceed.",
-    "invalid_password": "Invalid password. Please try again.",
-    "account_locked": "Account locked due to multiple failed attempts.",
-    "session_expired": "Your session has expired. Please login again.",
-    "permission_denied": "You don't have permission to perform this action.",
-    "security_violation": "Security violation detected.",
-    "safe_mode": "Running in safe mode due to security concerns.",
+# 🚀 FUTURE-PROOF ANIMATION SYSTEM
+ANIMATION_SYSTEM = {
+    "durations": {
+        "instant": "0ms",
+        "fast": "150ms",
+        "normal": "300ms",
+        "slow": "500ms",
+        "slower": "700ms"
+    },
+    
+    "easing": {
+        "linear": "linear",
+        "ease_in": "cubic-bezier(0.4, 0, 1, 1)",
+        "ease_out": "cubic-bezier(0, 0, 0.2, 1)",
+        "ease_in_out": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "bounce": "cubic-bezier(0.68, -0.55, 0.265, 1.55)"
+    },
+    
+    "transitions": {
+        "fade_in": "opacity 0.3s ease-in",
+        "slide_up": "transform 0.3s ease-out",
+        "scale_in": "transform 0.2s ease-out",
+        "rotate": "transform 0.5s ease-in-out"
+    }
 }
 
-# Command Help
-COMMAND_HELP = {
-    "help": "Show available commands and their usage",
-    "status": "Show current system status",
-    "config": "Show or modify configuration",
-    "security": "Security and authentication commands",
-    "plugins": "Plugin management commands",
-    "voice": "Voice interaction commands",
-    "swarm": "AI swarm management commands",
-    "atelier": "Creative workspace commands",
-    "exit": "Exit DevDollz",
-    "clear": "Clear the screen",
-    "version": "Show version information",
+# 🔮 INTELLIGENT MESSAGING SYSTEM
+FUTURE_MESSAGES = {
+    "welcome": {
+        "title": "Welcome to the Future of Development",
+        "subtitle": "DevDollz: Atelier Edition v2.0",
+        "message": "🎨 Your creative AI companion is ready to revolutionize your workflow",
+        "status": "System Status: Optimal Performance Detected"
+    },
+    
+    "system": {
+        "initializing": "🚀 Initializing quantum computing protocols...",
+        "ready": "✨ System ready for creative exploration",
+        "optimizing": "⚡ Optimizing neural pathways...",
+        "learning": "🧠 Adaptive learning algorithms active",
+        "creative": "🎨 Creative AI modules engaged"
+    },
+    
+    "interactions": {
+        "voice_active": "🎤 Voice recognition system active",
+        "ai_thinking": "💭 AI is processing your request...",
+        "code_generated": "✨ Code generation complete",
+        "deployment_ready": "🚀 Ready for deployment",
+        "security_verified": "🛡️ Security protocols verified"
+    }
 }
 
-# File Extensions
-SUPPORTED_EXTENSIONS = {
-    "code": [".py", ".js", ".ts", ".java", ".cpp", ".c", ".go", ".rs", ".php"],
-    "data": [".json", ".xml", ".yaml", ".yml", ".csv", ".sql"],
-    "media": [".png", ".jpg", ".jpeg", ".gif", ".mp4", ".mp3", ".wav"],
-    "documents": [".md", ".txt", ".pdf", ".doc", ".docx"],
-    "archives": [".zip", ".tar", ".gz", ".rar", ".7z"],
+# 🌐 ADVANCED CONFIGURATION TEMPLATES
+FUTURE_CONFIG = {
+    "ai_models": {
+        "primary": os.getenv("PRIMARY_AI_MODEL", "gpt-4"),
+        "fallback": os.getenv("FALLBACK_AI_MODEL", "claude-3"),
+        "local": os.getenv("LOCAL_AI_MODEL", "llama3"),
+        "creative": os.getenv("CREATIVE_AI_MODEL", "dall-e-3")
+    },
+    
+    "performance": {
+        "max_concurrent_ai": 5,
+        "response_timeout": 30,
+        "memory_limit": "8GB",
+        "gpu_acceleration": True
+    },
+    
+    "security": {
+        "encryption_level": "AES-256",
+        "session_timeout": 3600,
+        "max_login_attempts": 3,
+        "two_factor_auth": True
+    }
 }
 
-# API Endpoints (Templates)
-API_ENDPOINTS = {
-    "ollama": os.getenv("OLLAMA_BASE_URL", "http://localhost:11434"),
-    "twitter": "https://api.twitter.com/2",
-    "github": "https://api.github.com",
-    "openai": "https://api.openai.com/v1",
-}
-
-# Rate Limits
-RATE_LIMITS = {
-    "api_calls": 100,  # per minute
-    "file_operations": 1000,  # per minute
-    "database_queries": 500,  # per minute
-    "voice_processing": 10,  # per minute
-}
-
-# Timeouts
-TIMEOUTS = {
-    "api_request": 30,  # seconds
-    "file_operation": 60,  # seconds
-    "database_query": 10,  # seconds
-    "voice_processing": 120,  # seconds
-    "plugin_execution": 300,  # seconds
-}
-
-# Memory Limits
-MEMORY_LIMITS = {
-    "max_file_size": 100 * 1024 * 1024,  # 100MB
-    "max_database_size": 1024 * 1024 * 1024,  # 1GB
-    "max_cache_size": 512 * 1024 * 1024,  # 512MB
-    "max_plugin_memory": 256 * 1024 * 1024,  # 256MB
-}
-
-# Export all constants
+# 🎯 EXPORT ALL FUTURE-PROOF CONSTANTS
 __all__ = [
-    "THEME_ICONS",
-    "COLOR_THEMES", 
-    "MESSAGES",
-    "SECURITY_MESSAGES",
-    "COMMAND_HELP",
-    "SUPPORTED_EXTENSIONS",
-    "API_ENDPOINTS",
-    "RATE_LIMITS",
-    "TIMEOUTS",
-    "MEMORY_LIMITS",
+    "DEVDOLLZ_IDENTITY",
+    "FUTURE_ICONS", 
+    "NEON_COLOR_SYSTEMS",
+    "TYPOGRAPHY_SYSTEM",
+    "ANIMATION_SYSTEM",
+    "FUTURE_MESSAGES",
+    "FUTURE_CONFIG"
 ]
