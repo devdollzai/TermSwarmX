@@ -1,0 +1,15 @@
+# DevDollz: Atelier Edition - Core Dependencies
+# Core functionality
+textual>=0.40.0
+ollama>=0.1.0
+
+# Development and testing
+pytest>=7.0.0
+pylint>=2.17.0
+
+# Optional: Enhanced features
+prompt-toolkit>=3.0.0
+pygments>=2.15.0
+
+# Cross-platform compatibility
+pathlib2>=2.3.0; python_version < "3.4"
